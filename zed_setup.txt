@@ -1,0 +1,54 @@
+TX2入门教程硬件篇-外接双目相机ZED
+
+说明:
+
+介绍如何在TX2安装ZED双目相机
+步骤：
+
+准备：
+
+接上显示屏，键盘和鼠标
+刷机：
+
+TX2通过jetpack3.0需要采用full模式完成刷机
+确保有CUDA8.0支持
+下载和安装ZED SDK
+$ cd ~
+$ wget https://cdn.stereolabs.com/developers/downloads/ZED_SDK_Linux_JTX2_v2.3.0.run
+$ chmod +x ZED_SDK_Linux_JTX2_v2.3.0.run
+$ ./ZED_SDK_Linux_JTX2_v2.3.0.run
+根据提示完成安装
+测试：
+
+安装完成之后，文件都位于/usr/local/zed/tools目录下
+启动ZED Explorer
+cd /usr/local/zed/tools
+./"ZED Explorer"
+
+
+GET ros message of ZED image:
+
+启动ZED Depth Viewer
+cd /usr/local/zed
+./"ZED Depth Viewer"
+
+
+ROS image message capture:
+1. download ZED_SDK_Linux_JTX2_v2.1.2.run from https://www.stereolabs.com/developers/downloads/archives/ZED_SDK_Linux_JTX2_v2.1.2.run and install; This step is the same with the previous work, but we download different version.
+
+2. create a ROS catkin workspace and clone zed-ros-wrapper from https://github.com/stereolabs/zed-ros-wrapper, then checkout the version to v2.1.x and execute the catkin_make command. the step is down.
+
+3. test: Run the program
+To launch the wrapper along with an Rviz preview, open a terminal and launch:
+
+$ roslaunch zed_display_rviz display.launch # by default open a ZED
+or
+
+$ roslaunch zed_display_rviz display_zedm.launch # open a ZED Mini
+To launch the wrapper without Rviz, use:
+
+$ roslaunch zed_wrapper zed.launch
+To select the ZED from its serial number
+
+$ roslaunch zed_wrapper zed.launch serial_number:=1010 #replace 1010 with the actual SN
+
