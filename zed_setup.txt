@@ -34,9 +34,9 @@ cd /usr/local/zed
 
 
 ROS image message capture:
-1. download ZED_SDK_Linux_JTX2_v2.1.2.run from https://www.stereolabs.com/developers/downloads/archives/ZED_SDK_Linux_JTX2_v2.1.2.run and install; This step is the same with the previous work, but we download different version.
+1. download ZED_SDK_Linux_JTX2_v2.2.x.run from https://www.stereolabs.com/developers/downloads/archives/ZED_SDK_Linux_JTX2_v2.2.x.run and install; This step is the same with the previous work, but we download different version.
 
-2. create a ROS catkin workspace and clone zed-ros-wrapper from https://github.com/stereolabs/zed-ros-wrapper, then checkout the version to v2.1.x and execute the catkin_make command. the step is down.
+2. create a ROS catkin workspace and clone zed-ros-wrapper from https://github.com/stereolabs/zed-ros-wrapper, then checkout the version to v2.2.x and execute the catkin_make command. the step is down. (version 2.1.x has a problem when using the image ros topic)
 
 3. test: Run the program
 To launch the wrapper along with an Rviz preview, open a terminal and launch:
